@@ -6,22 +6,31 @@
 //  Copyright © 2020 Lipadat Evgeniy. All rights reserved.
 //
 
+import UIKit
 import XCoordinator
 
 enum MainRoute: Route {
     case initial
 }
 
-final class MainCoordinator: BaseCoordinator<MainRoute, Transition<MainTabBarViewController>> {
-    
+final class MainCoordinator: TabBarCoordinator<MainRoute> {
+
     init() {
-        super.init(rootViewController: MainTabBarViewController(), initialRoute: .initial)
+        super.init(rootViewController: MainTabBarViewController(), initialRoute: nil)
+        trigger(.initial)
     }
     
-    override func prepareTransition(for route: MainRoute) -> Transition<MainTabBarViewController> {
+    override func prepareTransition(for route: MainRoute) -> TabBarTransition {
         switch route {
         case .initial:
-            return .select(index: 0)
+            let pillsList = PillsListCoordinator()
+            let visits = VisitsCoordinator()
+            let measurements = MeasurementsCoordinator()
+            let settings = SettingsCoordinator()
+            return .multiple(
+            .set([pillsList, visits, measurements, settings]),
+            .select(pillsList)
+            )
         }
     }
 }

@@ -15,14 +15,17 @@ enum SettingsRoute: Route {
 final class SettingsCoordinator: NavigationCoordinator<SettingsRoute> {
     
     init() {
-        super.init(initialRoute: .initial)
+        super.init(initialRoute: nil)
+        trigger(.initial)
     }
     
     override func prepareTransition(for route: SettingsRoute) -> NavigationTransition {
         switch route {
         case .initial:
-            let controller = SettingsViewController()
+            let controller = SettingsViewController.init()
             controller.router = unownedRouter
+            
+            controller.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 3)
             return .push(controller)
         }
     }

@@ -15,7 +15,8 @@ enum VisitsRoute: Route {
 class VisitsCoordinator: NavigationCoordinator<VisitsRoute> {
     
     init() {
-        super.init(initialRoute: .initial)
+        super.init(initialRoute: nil)
+        trigger(.initial)
     }
     
     override func prepareTransition(for route: VisitsRoute) -> NavigationTransition {
@@ -23,6 +24,8 @@ class VisitsCoordinator: NavigationCoordinator<VisitsRoute> {
         case .initial:
             let controller = VisitsViewController()
             controller.router = unownedRouter
+            
+            controller.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 1)
             return .push(controller)
         }
     }

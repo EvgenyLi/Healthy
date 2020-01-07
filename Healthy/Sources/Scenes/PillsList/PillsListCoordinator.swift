@@ -15,14 +15,17 @@ enum PillsListRoute: Route {
 class PillsListCoordinator: NavigationCoordinator<PillsListRoute> {
     
     init() {
-        super.init(initialRoute: .initial)
+        super.init(initialRoute: nil)
+        trigger(.initial)
     }
     
     override func prepareTransition(for route: PillsListRoute) -> NavigationTransition {
         switch route {
         case .initial:
-            let controller = PillsListViewController()
-            controller.router = unownedRouter
+            let controller = PillsListViewController.init()
+            let viewModel = PillsListViewModel.init(router: unownedRouter)
+            controller.bind(to: viewModel)
+            
             controller.tabBarItem = UITabBarItem(tabBarSystemItem: .recents, tag: 0)
             return .push(controller)
         }

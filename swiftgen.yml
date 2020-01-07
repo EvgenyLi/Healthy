@@ -1,0 +1,12 @@
+strings:
+  inputs: Healthy/Resources/Base.lproj
+  filter: .+\.strings$
+  outputs:
+    - templateName: structured-swift4
+      output: Healthy/Resources/SwiftGen/strings.swift
+xcassets:
+  inputs:
+    - Healthy/Resources/Assets.xcassets
+  outputs:
+    - templateName: swift4
+      output: Healthy/Resources/SwiftGen/assets.swift

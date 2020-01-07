@@ -14,63 +14,71 @@ public protocol ModuleView: class {
     
     var output: ViewModel.Input { get }
     
-    var viewModel: ViewModel { get }
+    var viewModel: ViewModel! { get set }
     
-    func setupBindings(to viewModel: ViewModel) -> Disposable
-    
-    func bindViewModel(_ viewModel: ViewModel)
-    
-    func unbindViewModel()
+    func bindViewModel() -> Disposable
 }
 
-public extension ModuleView where Self: NSObjectProtocol {
-    
-    var viewModel: ViewModel {
-        assertMainThread()
-        guard let viewModel = viewModelBox?.viewModel else {
-            fatalError("ViewModel is not bound")
-        }
-        return viewModel
-    }
-    
-    func bindViewModel(_ viewModel: ViewModel) {
-        unbindViewModel()
-        viewModelBox = with(ViewModelBox(viewModel)) { box in
-            viewModel.setup(with: output).disposed(by: box.disposeBag)
-            setupBindings(to: viewModel).disposed(by: box.disposeBag)
-        }
-    }
-    
-    func unbindViewModel() {
-        assertMainThread()
-        viewModelBox = nil
+extension ModuleView where Self: UIViewController {
+    func bind(to model: Self.ViewModel) {
+        viewModel = model
+        loadViewIfNeeded()
+        _ = bindViewModel()
+        _ = viewModel.setup(with: output)
     }
 }
 
-fileprivate extension ModuleView where Self: NSObjectProtocol {
-    
-    var viewModelBox: ViewModelBox<ViewModel>? {
-        get {
-            return objc_getAssociatedObject(self, &AssociatedKeys.viewModelBox) as? ViewModelBox<ViewModel>
-        }
-        set {
-            objc_setAssociatedObject(self, &AssociatedKeys.viewModelBox, newValue,
-                                     objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
+extension ModuleView where Self: UITableViewCell {
+    func bind(to model: Self.ViewModel) {
+        viewModel = model
+        _ = bindViewModel()
     }
 }
 
-private enum AssociatedKeys {
-    static var viewModelBox: Int32 = 0
-}
-
-private class ViewModelBox<ViewModel> {
-    
-    let viewModel: ViewModel
-    let disposeBag = DisposeBag()
-    
-    init(_ viewModel: ViewModel) {
-        self.viewModel = viewModel
+extension ModuleView where Self: UICollectionViewCell {
+    func bind(to model: Self.ViewModel) {
+        viewModel = model
+        _ = bindViewModel()
     }
 }
+
+//public extension ModuleView where Self: NSObjectProtocol {
+//    
+//    var viewModel: ViewModel {
+//        assertMainThread()
+//        guard let viewModel = viewModelBox?.viewModel else {
+//            fatalError("ViewModel is not bound")
+//        }
+//        return viewModel
+//    }
+//}
+//
+//fileprivate extension ModuleView where Self: NSObjectProtocol {
+//
+//    var viewModelBox: ViewModelBox<ViewModel>? {
+//        get {
+//            return objc_getAssociatedObject(self, &AssociatedKeys.viewModelBox) as? ViewModelBox<ViewModel>
+//        }
+//        set {
+//            objc_setAssociatedObject(self, &AssociatedKeys.viewModelBox, newValue,
+//                                     objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+//        }
+//    }
+//}
+//
+//private enum AssociatedKeys {
+//    static var viewModelBox: Int32 = 0
+//}
+//
+//private class ViewModelBox<ViewModel> {
+//
+//    let viewModel: ViewModel
+//    let disposeBag = DisposeBag()
+//
+//    init(_ viewModel: ViewModel) {
+//        self.viewModel = viewModel
+//    }
+//}
+
+
 
