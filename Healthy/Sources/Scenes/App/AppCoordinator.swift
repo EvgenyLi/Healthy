@@ -13,16 +13,16 @@ enum AppRoute: Route {
 }
 
 final class AppCoordinator: ViewCoordinator<AppRoute> {
-    
+
     // MARK: - Public
     init() {
         super.init(rootViewController: .init(), initialRoute: nil)
         trigger(.main)
     }
-    
+
     // MARK: - Overrides
     override func prepareTransition(for route: AppRoute) -> ViewTransition {
-        
+
         switch route {
         case .main:
             let main = MainCoordinator()

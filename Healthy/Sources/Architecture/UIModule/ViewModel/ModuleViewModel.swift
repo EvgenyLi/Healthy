@@ -10,13 +10,13 @@ import RxSwift
 import XCoordinator
 
 public protocol ModuleViewModel: class {
-    
+
     associatedtype Input
     associatedtype Route
-    
+
     func setup(with input: Input) -> Disposable
-    
+
     init(router: Route)
-    
+
     var router: Route { get }
 }

@@ -10,9 +10,9 @@ import UIKit
 import XCoordinator
 
 class MeasurementsViewController: UIViewController {
-    
+
     var router: UnownedRouter<MeasurementsRoute>?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white

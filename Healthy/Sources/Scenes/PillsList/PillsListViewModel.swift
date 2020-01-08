@@ -11,7 +11,7 @@ import RxSwift
 import XCoordinator
 
 final class PillsListViewModel: ModuleViewModel {
-    
+
     // MARK: - Dependencies
     let router: UnownedRouter<PillsListRoute>
 
@@ -23,18 +23,18 @@ final class PillsListViewModel: ModuleViewModel {
     struct Input {
         var buttonTapped: Signal<Void>
     }
-    
+
     func setup(with input: PillsListViewModel.Input) -> Disposable {
         return Disposables.create([
             input.buttonTapped
                 .asObservable()
                 .bind(to: tapRelay)])
     }
-    
+
     var output: Observable<String> {
         return tapRelay.mapTo("Test")
     }
-    
+
     // MARK: - Private
     private let tapRelay = PublishRelay<Void>()
 }

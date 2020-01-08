@@ -9,7 +9,7 @@
 import Foundation
 
 extension NSRecursiveLock {
-    
+
     @discardableResult
     func performLocked<T>(action: () -> T) -> T {
         lock()

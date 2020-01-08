@@ -10,7 +10,7 @@ import RxSwift
 import XCoordinator
 
 extension Router {
-    
+
     public var rx: Reactive<Self> {
         // swiftlint:disable:previous identifier_name
         return Reactive(self)
@@ -18,7 +18,7 @@ extension Router {
 }
 
 extension Reactive where Base: Router {
-    
+
     public func trigger(_ route: Base.RouteType) -> Completable {
         return Completable.create { [base] observer in
             base.trigger(route) {
@@ -27,7 +27,7 @@ extension Reactive where Base: Router {
             return Disposables.create()
         }
     }
-    
+
     public func trigger(_ route: Base.RouteType, with options: TransitionOptions) -> Completable {
         return Completable.create { [base] observer in
             base.trigger(route, with: options) {

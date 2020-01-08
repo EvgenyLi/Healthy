@@ -10,14 +10,14 @@ import RxCocoa
 import RxSwift
 
 public extension ObservableType {
-    
+
     /// Catches error and completes the sequence
-    func catchErrorJustComplete() -> Observable<E> {
+    func catchErrorJustComplete() -> Observable<Element> {
         return catchError { _ in return .empty() }
     }
-    
+
     /// Asserts the observable sequence never emits error
-    func catchErrorNever(file: StaticString = #file, line: UInt = #line) -> Observable<E> {
+    func catchErrorNever(file: StaticString = #file, line: UInt = #line) -> Observable<Element> {
         return catchError { error in
             assertionFailure("unexpected error in observable sequence: \(error)", file: file, line: line)
             return .empty()
@@ -30,8 +30,8 @@ public enum SharedSequenceErrorHandler {
 }
 
 public extension ObservableType {
-    
-    func asDriver(onError errorHandler: SharedSequenceErrorHandler, _ file: StaticString = #file, _ line: UInt = #line) -> Driver<E> {
+
+    func asDriver(onError errorHandler: SharedSequenceErrorHandler, _ file: StaticString = #file, _ line: UInt = #line) -> Driver<Element> {
         return asDriver { error in
             switch errorHandler {
             case .never:
@@ -40,8 +40,8 @@ public extension ObservableType {
             }
         }
     }
-    
-    func asSignal(onError errorHandler: SharedSequenceErrorHandler, _ file: StaticString = #file, _ line: UInt = #line) -> Signal<E> {
+
+    func asSignal(onError errorHandler: SharedSequenceErrorHandler, _ file: StaticString = #file, _ line: UInt = #line) -> Signal<Element> {
         return asSignal { error in
             switch errorHandler {
             case .never:
@@ -50,9 +50,8 @@ public extension ObservableType {
             }
         }
     }
-    
-    func retryWhen<O: ObservableConvertibleType>(_ eventSequence: O) -> Observable<E> {
+
+    func retryWhen<O: ObservableConvertibleType>(_ eventSequence: O) -> Observable<Element> {
         return retryWhen { _ in eventSequence.asObservable() }
     }
 }
-

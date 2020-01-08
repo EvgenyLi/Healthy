@@ -9,13 +9,13 @@
 import Foundation
 
 extension Dictionary {
-    
+
     mutating func merge(with dictionary: Dictionary) {
         dictionary.forEach {
             updateValue($0.value, forKey: $0.key)
         }
     }
-    
+
     func merged(with dictionary: Dictionary) -> Dictionary {
         var result = self
         result.merge(with: dictionary)

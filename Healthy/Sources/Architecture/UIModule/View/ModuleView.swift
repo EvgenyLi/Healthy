@@ -9,13 +9,13 @@
 import RxSwift
 
 public protocol ModuleView: class {
-    
+
     associatedtype ViewModel: ModuleViewModel
-    
+
     var output: ViewModel.Input { get }
-    
+
     var viewModel: ViewModel! { get set }
-    
+
     func bindViewModel() -> Disposable
 }
 
@@ -79,6 +79,3 @@ extension ModuleView where Self: UICollectionViewCell {
 //        self.viewModel = viewModel
 //    }
 //}
-
-
-

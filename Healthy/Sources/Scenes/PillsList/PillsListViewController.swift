@@ -12,21 +12,21 @@ import RxCocoa
 import RxSwift
 
 class PillsListViewController: UIViewController, ModuleView {
-    
+
     // MARK: - Dependencies
     var viewModel: PillsListViewModel!
-    
+
     // MARK: - Public
     var output: PillsListViewModel.Input {
         return PillsListViewModel.Input(buttonTapped: _newView.rx.tap.asSignal())
     }
-    
+
     func bindViewModel() -> Disposable {
         return Disposables.create([
             viewModel.output.asObservable()
             .bind(onNext: { print($0) })])
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
@@ -40,7 +40,7 @@ class PillsListViewController: UIViewController, ModuleView {
         let height = _newView.heightAnchor.constraint(equalToConstant: 200)
         NSLayoutConstraint.activate([horizontalConstraint, verticalConstraint, width, height])
     }
-    
+
     // MARK: - Private
     private let _newView = UIButton()
     private let _bag = DisposeBag()

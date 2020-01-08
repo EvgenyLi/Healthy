@@ -10,14 +10,14 @@ import UIKit
 import XCoordinator
 
 class MainTabBarViewController: UITabBarController {
-    
+
     var router: UnownedRouter<MainRoute>!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
-    
+
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         print(item)
     }

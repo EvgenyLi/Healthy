@@ -63,4 +63,3 @@ public func runOnMainThread<T>(_ block: () throws -> T) rethrows -> T {
 public func todoLocalize(_ string: String) -> String {
     return string
 }
-

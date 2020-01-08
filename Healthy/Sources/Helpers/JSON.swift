@@ -7,14 +7,14 @@
 //
 
 public struct JSON {
-    
+
     public typealias Array = [Any]
     public typealias Dictionary = [AnyHashable: Any]
-    
+
     public func value<Value: JSONMappable>(ofType type: Value.Type = Value.self) throws -> Value {
         return try Value(from: self)
     }
-    
+
     public func valueIfPresent<Value: JSONMappable>(ofType type: Value.Type = Value.self) throws -> Value? {
         do {
             return try value(ofType: type)
@@ -24,7 +24,7 @@ public struct JSON {
             return nil
         }
     }
-    
+
     public func value<Value: JSONMappable, U>(using transfromClosure: (Value) -> U?) throws -> U {
         let rawValue = try value(ofType: Value.self)
         guard let value = transfromClosure(rawValue) else {
@@ -32,7 +32,7 @@ public struct JSON {
         }
         return value
     }
-    
+
     public func valueIfPresent<Value: JSONMappable, U>(using transfromClosure: (Value) -> U?) throws -> U? {
         guard let rawValue = try valueIfPresent(ofType: Value.self) else {
             return nil
@@ -42,7 +42,7 @@ public struct JSON {
         }
         return value
     }
-    
+
     public func value<Value: JSONMappable, U>(using transfromClosure: (Value) throws -> U) throws -> U {
         let rawValue = try value(ofType: Value.self)
         do {
@@ -51,7 +51,7 @@ public struct JSON {
             throw JSONError.invalidValue(type: U.self, value: rawValue, path: path, cause: nil)
         }
     }
-    
+
     public func valueIfPresent<Value: JSONMappable, U>(using transfromClosure: (Value) throws -> U) throws -> U? {
         guard let rawValue = try valueIfPresent(ofType: Value.self) else {
             return nil
@@ -62,11 +62,11 @@ public struct JSON {
             throw JSONError.invalidValue(type: U.self, value: rawValue, path: path, cause: error)
         }
     }
-    
+
     public func value<Value: RawRepresentable>(ofType type: Value.Type = Value.self) throws -> Value where Value.RawValue: JSONMappable {
         return try value(using: Value.init(rawValue:))
     }
-    
+
     // swiftlint:disable:next line_length
     public func valueIfPresent<Value: RawRepresentable>(ofType type: Value.Type = Value.self) throws -> Value? where Value.RawValue: JSONMappable {
         do {
@@ -77,29 +77,29 @@ public struct JSON {
             return nil
         }
     }
-    
+
     public subscript(_ index: Int) -> JSON {
         return JSON(path: .index(path, index))
     }
-    
+
     public subscript(_ key: String) -> JSON {
         return JSON(path: .key(path, key))
     }
-    
+
     public init(_ json: Dictionary) {
         path = .root(json)
     }
-    
+
     public init(_ json: [String: Any]) {
         path = .root(json)
     }
-    
+
     public init(_ json: Array) {
         path = .root(json)
     }
-    
+
     fileprivate let path: JSONPath
-    
+
     fileprivate init(path: JSONPath) {
         self.path = path
     }
@@ -110,11 +110,11 @@ public protocol JSONMappable {
 }
 
 public enum JSONError: Error, CustomDebugStringConvertible {
-    
+
     case keyNotFound(key: String, path: JSONPath)
     case indexOutOfRange(index: Int, path: JSONPath)
     case invalidValue(type: Any.Type, value: Any, path: JSONPath, cause: Error?)
-    
+
     public var debugDescription: String {
         switch self {
         case let .keyNotFound(key, .root):
@@ -138,11 +138,11 @@ public enum JSONError: Error, CustomDebugStringConvertible {
 }
 
 public enum JSONPath: CustomStringConvertible {
-    
+
     case root(Any)
     indirect case index(JSONPath, Int)
     indirect case key(JSONPath, String)
-    
+
     public var description: String {
         switch self {
         case .root:
@@ -155,11 +155,11 @@ public enum JSONPath: CustomStringConvertible {
             return path.description.appending(".\(key)")
         }
     }
-    
+
     fileprivate func value<T>(ofType type: T.Type = T.self) throws -> T {
-        
+
         let rawValue: Any
-        
+
         switch self {
         case let .root(value):
             rawValue = value
@@ -176,11 +176,11 @@ public enum JSONPath: CustomStringConvertible {
             }
             rawValue = value
         }
-        
+
         guard let value = rawValue as? T else {
             throw JSONError.invalidValue(type: type, value: rawValue, path: self, cause: nil)
         }
-        
+
         return value
     }
 }
@@ -232,4 +232,3 @@ extension JSON: JSONMappable {
         self.init(path: .root(try json.path.value(ofType: Any.self)))
     }
 }
-

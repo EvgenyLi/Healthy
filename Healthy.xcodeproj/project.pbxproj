@@ -27,6 +27,7 @@
 		C2B60B6023C530C000F486F5 /* strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B60B5E23C530C000F486F5 /* strings.swift */; };
 		C2B60B6123C530C000F486F5 /* assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B60B5F23C530C000F486F5 /* assets.swift */; };
 		C2B60B9523C546B600F486F5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C2B60B9323C546B600F486F5 /* Localizable.strings */; };
+		C2B60B9A23C5503300F486F5 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = C2B60B9923C5503300F486F5 /* .swiftlint.yml */; };
 		C2F4710723BB3314005D0FCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2F4710623BB3314005D0FCB /* Assets.xcassets */; };
 		C2F4710A23BB3314005D0FCB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2F4710823BB3314005D0FCB /* LaunchScreen.storyboard */; };
 		C2F4711523BB3315005D0FCB /* HealthyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F4711423BB3315005D0FCB /* HealthyTests.swift */; };
@@ -95,6 +96,7 @@
 		C2B60B8823C544B600F486F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C2B60B9423C546B600F486F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C2B60B9623C546EA00F486F5 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C2B60B9923C5503300F486F5 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		C2F470FA23BB3314005D0FCB /* Healthy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Healthy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2F4710623BB3314005D0FCB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C2F4710B23BB3314005D0FCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 		C2F470F123BB3314005D0FCB = {
 			isa = PBXGroup;
 			children = (
+				C2B60B9923C5503300F486F5 /* .swiftlint.yml */,
 				C2B60B5D23C52CE800F486F5 /* swiftgen.yml */,
 				C2F470FC23BB3314005D0FCB /* Healthy */,
 				C2F4711323BB3315005D0FCB /* HealthyTests */,
@@ -441,12 +444,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C2F4712423BB3315005D0FCB /* Build configuration list for PBXNativeTarget "Healthy" */;
 			buildPhases = (
+				C2B60B5C23C5282200F486F5 /* ShellScript */,
 				2DA006FAB89E89B9E227CCA0 /* [CP] Check Pods Manifest.lock */,
 				C2F470F623BB3314005D0FCB /* Sources */,
 				C2F470F723BB3314005D0FCB /* Frameworks */,
 				C2F470F823BB3314005D0FCB /* Resources */,
 				AD69719C3B50947D2E193C84 /* [CP] Embed Pods Frameworks */,
-				C2B60B5C23C5282200F486F5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -547,6 +550,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2B60B9A23C5503300F486F5 /* .swiftlint.yml in Resources */,
 				C2F4710A23BB3314005D0FCB /* LaunchScreen.storyboard in Resources */,
 				C2F4710723BB3314005D0FCB /* Assets.xcassets in Resources */,
 				C2B60B9523C546B600F486F5 /* Localizable.strings in Resources */,
@@ -663,7 +667,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT/SwiftGen/bin/swiftgen\"\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT/SwiftGen/bin/swiftgen\"\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 		DBBD33E2DD882F007AE57C41 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

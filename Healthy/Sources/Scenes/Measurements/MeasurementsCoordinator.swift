@@ -13,18 +13,18 @@ enum MeasurementsRoute: Route {
 }
 
 class MeasurementsCoordinator: NavigationCoordinator<MeasurementsRoute> {
-    
+
     init() {
         super.init(initialRoute: nil)
         trigger(.initial)
     }
-    
+
     override func prepareTransition(for route: MeasurementsRoute) -> NavigationTransition {
         switch route {
         case .initial:
             let controller = MeasurementsViewController.init()
             controller.router = unownedRouter
-            
+
             controller.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 2)
             return .push(controller)
         }

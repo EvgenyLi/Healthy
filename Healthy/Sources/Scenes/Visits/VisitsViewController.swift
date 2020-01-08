@@ -10,9 +10,9 @@ import UIKit
 import XCoordinator
 
 class VisitsViewController: UIViewController {
-    
+
     var router: UnownedRouter<VisitsRoute>?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white

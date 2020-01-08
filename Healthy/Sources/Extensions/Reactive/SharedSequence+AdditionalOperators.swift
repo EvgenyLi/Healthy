@@ -10,17 +10,16 @@ import RxCocoa
 import RxSwift
 
 public extension SharedSequence {
-    
+
     func mapTo<R>(_ value: R) -> SharedSequence<SharingStrategy, R> {
         return map { _ in value }
     }
-    
-    func unwrapOptional<T>() -> SharedSequence<SharingStrategy, T> where E == T? {
+
+    func unwrapOptional<T>() -> SharedSequence<SharingStrategy, T> where Element == T? {
         return flatMap { .from(optional: $0) }
     }
-    
-    func unwrapOptional<T>(_ transform: @escaping (E) -> T?) -> SharedSequence<SharingStrategy, T> {
+
+    func unwrapOptional<T>(_ transform: @escaping (Element) -> T?) -> SharedSequence<SharingStrategy, T> {
         return flatMap { .from(optional: transform($0)) }
     }
 }
-

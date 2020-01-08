@@ -10,12 +10,12 @@ import UIKit
 import XCoordinator
 
 class SettingsViewController: UIViewController {
-    
+
     var router: UnownedRouter<SettingsRoute>?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
     }
-    
+
 }

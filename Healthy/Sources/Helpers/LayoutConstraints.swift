@@ -9,11 +9,11 @@
 import UIKit
 
 public extension NSLayoutConstraint {
-    
+
     static func activate(_ constraints: NSLayoutConstraint...) {
         activate(constraints)
     }
-    
+
     static func deactivate(_ constraints: NSLayoutConstraint...) {
         deactivate(constraints)
     }
@@ -67,4 +67,3 @@ public func + <AnchorType: AnyObject>(lhs: NSLayoutAnchor<AnchorType>, rhs: CGFl
 public func - <AnchorType: AnyObject>(lhs: NSLayoutAnchor<AnchorType>, rhs: CGFloat) -> ConstraintExpression<AnchorType> {
     return ConstraintExpression(anchor: lhs, constant: -rhs)
 }
-

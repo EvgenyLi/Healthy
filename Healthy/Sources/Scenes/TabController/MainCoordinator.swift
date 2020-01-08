@@ -19,7 +19,7 @@ final class MainCoordinator: TabBarCoordinator<MainRoute> {
         super.init(rootViewController: MainTabBarViewController(), initialRoute: nil)
         trigger(.initial)
     }
-    
+
     override func prepareTransition(for route: MainRoute) -> TabBarTransition {
         switch route {
         case .initial:
