@@ -9,7 +9,7 @@ jobs:
 
     steps:
     - name: Checkout current branch
-      uses: actions/checkout@master
+      uses: actions/checkout@v-1
     - name: Install gems
       run: bundle install
     - name: Select Xcode
