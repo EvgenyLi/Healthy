@@ -1,0 +1,73 @@
+PODS:
+  - Alamofire (5.0.0-rc.3)
+  - DateScrollPicker (1.0.1)
+  - Differentiator (4.0.1)
+  - EasyDi (1.6.1)
+  - RxCocoa (5.0.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxDataSources (4.0.1):
+    - Differentiator (~> 4.0)
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
+  - RxOptional (4.1.0):
+    - RxCocoa (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.0.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.0.1)
+  - RxTest (5.0.1):
+    - RxSwift (~> 5)
+  - SwiftGen (6.1.0)
+  - SwiftLint (0.38.0)
+  - XCoordinator (2.0.6):
+    - XCoordinator/Core (= 2.0.6)
+  - XCoordinator/Core (2.0.6)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.0.0-rc.3)
+  - DateScrollPicker
+  - EasyDi
+  - RxCocoa (~> 5)
+  - RxDataSources (~> 4.0)
+  - RxOptional
+  - RxSwift (~> 5)
+  - RxTest (~> 5)
+  - SwiftGen (~> 6.0)
+  - SwiftLint
+  - XCoordinator (~> 2.0)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - DateScrollPicker
+    - Differentiator
+    - EasyDi
+    - RxCocoa
+    - RxDataSources
+    - RxOptional
+    - RxRelay
+    - RxSwift
+    - RxTest
+    - SwiftGen
+    - SwiftLint
+    - XCoordinator
+
+SPEC CHECKSUMS:
+  Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
+  DateScrollPicker: e56c054b24ca9b69381971db0d5cf9e0654534ef
+  Differentiator: 886080237d9f87f322641dedbc5be257061b0602
+  EasyDi: 3d7d4c0d3ad2d78b3ff22d4755590d32945f69cc
+  RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
+  RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
+  RxOptional: b1fcd60856807a564c0215c2184b8d33e7826dc2
+  RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
+  RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
+  RxTest: 0132f952a61da82d5233abedaa559df91e5330e5
+  SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
+  SwiftLint: 4105f061f9812b214568b736dab580ab2c73a582
+  XCoordinator: 67772bf463acec002a920ab5eb04f46835dcf123
+
+PODFILE CHECKSUM: 0894f3df5aba7cce9020591dcc93078708b1c7c7
+
+COCOAPODS: 1.8.4
