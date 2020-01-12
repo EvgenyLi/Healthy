@@ -10,7 +10,6 @@ target 'Healthy' do
     pod 'RxCocoa', '~> 5'
     pod 'RxOptional'
     pod 'RxDataSources', '~> 4.0'
-    pod "EasyDi"
     pod 'SwiftLint'
     pod 'SwiftGen', '~> 6.0'
     pod 'Alamofire', '~> 5.0.0-rc.3'
