@@ -2,7 +2,6 @@ PODS:
   - Alamofire (5.0.0-rc.3)
   - DateScrollPicker (1.0.1)
   - Differentiator (4.0.1)
-  - EasyDi (1.6.1)
   - RxCocoa (5.0.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
@@ -27,7 +26,6 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 5.0.0-rc.3)
   - DateScrollPicker
-  - EasyDi
   - RxCocoa (~> 5)
   - RxDataSources (~> 4.0)
   - RxOptional
@@ -42,7 +40,6 @@ SPEC REPOS:
     - Alamofire
     - DateScrollPicker
     - Differentiator
-    - EasyDi
     - RxCocoa
     - RxDataSources
     - RxOptional
@@ -57,7 +54,6 @@ SPEC CHECKSUMS:
   Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
   DateScrollPicker: e56c054b24ca9b69381971db0d5cf9e0654534ef
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
-  EasyDi: 3d7d4c0d3ad2d78b3ff22d4755590d32945f69cc
   RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
   RxOptional: b1fcd60856807a564c0215c2184b8d33e7826dc2
@@ -68,6 +64,6 @@ SPEC CHECKSUMS:
   SwiftLint: 4105f061f9812b214568b736dab580ab2c73a582
   XCoordinator: 67772bf463acec002a920ab5eb04f46835dcf123
 
-PODFILE CHECKSUM: 0894f3df5aba7cce9020591dcc93078708b1c7c7
+PODFILE CHECKSUM: dd7a50d1aa76dff7053f73806f884fb4a2516a45
 
 COCOAPODS: 1.8.4

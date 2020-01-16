@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3B29A2623E336E0B05CA4B15 /* Pods_Healthy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 533F8452ED2F5B750CB55F6C /* Pods_Healthy.framework */; };
-		C2353DFC23BCE6200018A613 /* LayoutConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2353DFB23BCE6200018A613 /* LayoutConstraints.swift */; };
 		C2353E3823BE7DEE0018A613 /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2353E3723BE7DEE0018A613 /* UIViewController+Rx.swift */; };
 		C2353E3A23BE80770018A613 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2353E3923BE80770018A613 /* AppDelegate.swift */; };
 		C2353E4D23BF9C710018A613 /* VisitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2353E4C23BF9C710018A613 /* VisitsViewController.swift */; };
@@ -45,7 +44,6 @@
 		C2F4749523BB4AF2005D0FCB /* Optional+Unwrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F4749423BB4AF2005D0FCB /* Optional+Unwrap.swift */; };
 		C2F4749823BB4B62005D0FCB /* Router+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F4749723BB4B62005D0FCB /* Router+Rx.swift */; };
 		C2F4749F23BB4C82005D0FCB /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F4749E23BB4C82005D0FCB /* JSON.swift */; };
-		C2F474A123BB4CA4005D0FCB /* Routines.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F474A023BB4CA4005D0FCB /* Routines.swift */; };
 		DFF535AAFA6F3D7FF75A6C9A /* Pods_Healthy_HealthyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B45A8CC9A31FD370AC7BF49 /* Pods_Healthy_HealthyUITests.framework */; };
 		F5BE8C7EE55C386DCC19C8B1 /* Pods_HealthyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F55C7D5EA82450B44343AA6A /* Pods_HealthyTests.framework */; };
 /* End PBXBuildFile section */
@@ -74,7 +72,6 @@
 		9ED2718238E91E363B24DF5D /* Pods-Healthy-HealthyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Healthy-HealthyUITests.release.xcconfig"; path = "Target Support Files/Pods-Healthy-HealthyUITests/Pods-Healthy-HealthyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A6EA3FCB0DBCB88FF8A42DB5 /* Pods-HealthyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthyTests.debug.xcconfig"; path = "Target Support Files/Pods-HealthyTests/Pods-HealthyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BAF9DACDB607D9AB895BA11E /* Pods-Healthy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Healthy.release.xcconfig"; path = "Target Support Files/Pods-Healthy/Pods-Healthy.release.xcconfig"; sourceTree = "<group>"; };
-		C2353DFB23BCE6200018A613 /* LayoutConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutConstraints.swift; sourceTree = "<group>"; };
 		C2353E3723BE7DEE0018A613 /* UIViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
 		C2353E3923BE80770018A613 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2353E4C23BF9C710018A613 /* VisitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitsViewController.swift; sourceTree = "<group>"; };
@@ -119,7 +116,6 @@
 		C2F4749423BB4AF2005D0FCB /* Optional+Unwrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Unwrap.swift"; sourceTree = "<group>"; };
 		C2F4749723BB4B62005D0FCB /* Router+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Router+Rx.swift"; sourceTree = "<group>"; };
 		C2F4749E23BB4C82005D0FCB /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
-		C2F474A023BB4CA4005D0FCB /* Routines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routines.swift; sourceTree = "<group>"; };
 		D56B2CADE8E7C7843A4D3C75 /* Pods-HealthyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthyTests.release.xcconfig"; path = "Target Support Files/Pods-HealthyTests/Pods-HealthyTests.release.xcconfig"; sourceTree = "<group>"; };
 		E0429E23E55BE4558AA4F9C2 /* Pods-Healthy-HealthyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Healthy-HealthyUITests.debug.xcconfig"; path = "Target Support Files/Pods-Healthy-HealthyUITests/Pods-Healthy-HealthyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F55C7D5EA82450B44343AA6A /* Pods_HealthyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealthyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -424,8 +420,6 @@
 			isa = PBXGroup;
 			children = (
 				C2F4749E23BB4C82005D0FCB /* JSON.swift */,
-				C2F474A023BB4CA4005D0FCB /* Routines.swift */,
-				C2353DFB23BCE6200018A613 /* LayoutConstraints.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -718,7 +712,6 @@
 				C2F4749F23BB4C82005D0FCB /* JSON.swift in Sources */,
 				C2F4748C23BB4A77005D0FCB /* ObservableType+AdditionalOperators.swift in Sources */,
 				C2353E3A23BE80770018A613 /* AppDelegate.swift in Sources */,
-				C2F474A123BB4CA4005D0FCB /* Routines.swift in Sources */,
 				C2F4749023BB4AAB005D0FCB /* PrimitiveSequence+AdditionalOperators.swift in Sources */,
 				C2F4747A23BB4991005D0FCB /* ModuleViewModel.swift in Sources */,
 				C2F4748E23BB4A90005D0FCB /* ObservableType+Errors.swift in Sources */,
@@ -739,7 +732,6 @@
 				C2F4747D23BB49B3005D0FCB /* ModuleView.swift in Sources */,
 				C2353E6D23BFCC2E0018A613 /* MainCoordinator.swift in Sources */,
 				C2353E5523BF9DEE0018A613 /* MeasurementsCoordinator.swift in Sources */,
-				C2353DFC23BCE6200018A613 /* LayoutConstraints.swift in Sources */,
 				C2F4749823BB4B62005D0FCB /* Router+Rx.swift in Sources */,
 				C2B60B6123C530C000F486F5 /* assets.swift in Sources */,
 				C2F4748323BB4A1A005D0FCB /* Dictionary+Extensions.swift in Sources */,
