@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (5.0.0-rc.3)
   - DateScrollPicker (1.0.1)
+  - PinLayout (1.8.13)
   - Realm (4.3.1):
     - Realm/Headers (= 4.3.1)
   - Realm/Headers (4.3.1)
@@ -29,6 +30,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 5.0.0-rc.3)
   - DateScrollPicker
+  - PinLayout
   - RxCocoa (~> 5)
   - RxOptional
   - RxRealm
@@ -42,6 +44,7 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - DateScrollPicker
+    - PinLayout
     - Realm
     - RealmSwift
     - RxCocoa
@@ -57,6 +60,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
   DateScrollPicker: e56c054b24ca9b69381971db0d5cf9e0654534ef
+  PinLayout: e41a50260a76508b7a7fcee8955c76639adc69bc
   Realm: 31dc40934081ef740f60feedc46d88473cbfeb40
   RealmSwift: b5199e9a41f67b99f51acf6874a6166f5fbe93d1
   RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
@@ -69,6 +73,6 @@ SPEC CHECKSUMS:
   SwiftLint: 4105f061f9812b214568b736dab580ab2c73a582
   XCoordinator: 67772bf463acec002a920ab5eb04f46835dcf123
 
-PODFILE CHECKSUM: c864304fc589af579e3be6c8c21433cf622aac09
+PODFILE CHECKSUM: 633d34a8a0893b04b84651dbf61708fe91df4047
 
 COCOAPODS: 1.8.4

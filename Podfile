@@ -15,6 +15,7 @@ target 'Healthy' do
     pod 'DateScrollPicker'
     pod 'XCoordinator', '~> 2.0'
     pod "RxRealm"
+    pod 'PinLayout'
 
   target 'HealthyTests' do
     inherit! :search_paths
