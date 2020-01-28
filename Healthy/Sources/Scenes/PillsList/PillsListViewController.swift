@@ -7,16 +7,18 @@
 //
 
 import UIKit
-import XCoordinator
 import RxCocoa
 import RxSwift
 import DateScrollPicker
+import PinLayout
+import RxRealm
 
 class PillsListViewController: UIViewController, ModuleView {
     
     // MARK: - Dependencies
     var viewModel: PillsListViewModel!
     let dateScrollPicker = DateScrollPicker()
+   // var dataSource =
     
     // MARK: - Public
     var output: PillsListViewModel.Input {
@@ -29,25 +31,51 @@ class PillsListViewController: UIViewController, ModuleView {
                 .bind(onNext: { print($0) })])
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         title = L10n.test
         setupDateScrollPicker()
+        
+        view.addSubview(_tableView)
+        _tableView.dataSource = self
+        _tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     }
     
     private func setupDateScrollPicker() {
         view.addSubview(dateScrollPicker)
-        setupScrollPicker()
-        dateScrollPicker.translatesAutoresizingMaskIntoConstraints = false
-        let height = dateScrollPicker.heightAnchor.constraint(equalToConstant: 100)
-        let leadingAnchor = dateScrollPicker.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10)
-        let trailingAnchor = dateScrollPicker.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10)
-        let topAnchor = dateScrollPicker.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0)
-        NSLayoutConstraint.activate([leadingAnchor, trailingAnchor, height, topAnchor])
+        scrollPickerConfig()
+    }
+    
+    override func viewWillLayoutSubviews() {
+       super.viewWillLayoutSubviews()
+        dateScrollPicker.pin.left().top(view.pin.safeArea).right().height(100).margin(10)
+        _tableView.pin.below(of: dateScrollPicker).all(10)
     }
     
     // MARK: - Private
     private let _newView = UIButton()
+    private let _tableView = UITableView()
     private let _bag = DisposeBag()
+}
+
+extension PillsListViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 50
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        return cell
+    }
 }

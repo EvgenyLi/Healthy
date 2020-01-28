@@ -32,6 +32,7 @@
 		C2353EB023C0D6E10018A613 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2353EAF23C0D6E10018A613 /* SceneDelegate.swift */; };
 		C2353EB323C0DE670018A613 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2353EB223C0DE670018A613 /* AppCoordinator.swift */; };
 		C2834E6B23C255F3005227D7 /* PillsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2834E6A23C255F3005227D7 /* PillsListViewModel.swift */; };
+		C2AC245223D4BE0E0096CEA1 /* PillsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AC245123D4BE0E0096CEA1 /* PillsListCell.swift */; };
 		C2B60B6023C530C000F486F5 /* strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B60B5E23C530C000F486F5 /* strings.swift */; };
 		C2B60B6123C530C000F486F5 /* assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B60B5F23C530C000F486F5 /* assets.swift */; };
 		C2B60B9523C546B600F486F5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C2B60B9323C546B600F486F5 /* Localizable.strings */; };
@@ -105,6 +106,7 @@
 		C2353EAF23C0D6E10018A613 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C2353EB223C0DE670018A613 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		C2834E6A23C255F3005227D7 /* PillsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillsListViewModel.swift; sourceTree = "<group>"; };
+		C2AC245123D4BE0E0096CEA1 /* PillsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillsListCell.swift; sourceTree = "<group>"; };
 		C2B60B5D23C52CE800F486F5 /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		C2B60B5E23C530C000F486F5 /* strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = strings.swift; sourceTree = "<group>"; };
 		C2B60B5F23C530C000F486F5 /* assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = assets.swift; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 		C2353E4623BF9BAD0018A613 /* PillsList */ = {
 			isa = PBXGroup;
 			children = (
+				C2AC245023D4BDC90096CEA1 /* View */,
 				C21766EC23D38E62003DB4D6 /* DateScrollPicker */,
 				C2353E5823BF9E1A0018A613 /* PillsListCoordinator.swift */,
 				C2353E6E23C0C1CD0018A613 /* PillsListViewController.swift */,
@@ -293,6 +296,14 @@
 				C2353EB223C0DE670018A613 /* AppCoordinator.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		C2AC245023D4BDC90096CEA1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C2AC245123D4BE0E0096CEA1 /* PillsListCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		C2B60B5B23C525CD00F486F5 /* SwiftGen */ = {
@@ -784,6 +795,7 @@
 				C2353E5123BF9C940018A613 /* SettingsViewController.swift in Sources */,
 				C2353EB323C0DE670018A613 /* AppCoordinator.swift in Sources */,
 				C2F4748123BB4A0A005D0FCB /* Date+Extensions.swift in Sources */,
+				C2AC245223D4BE0E0096CEA1 /* PillsListCell.swift in Sources */,
 				C2353E4D23BF9C710018A613 /* VisitsViewController.swift in Sources */,
 				C21766F223D38F59003DB4D6 /* DateScrollPickerFormatConfigurator.swift in Sources */,
 				C21766F023D38ED6003DB4D6 /* DateScrollPickerDelegate.swift in Sources */,

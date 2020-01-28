@@ -10,7 +10,7 @@ import DateScrollPicker
 
 extension PillsListViewController {
     
-    func setupScrollPicker() {
+    func scrollPickerConfig() {
         var format = DateScrollPickerFormat()
         format.days = 5
         format.topDateFormat = "MMM"
