@@ -1,18 +1,21 @@
 PODS:
   - Alamofire (5.0.0-rc.3)
   - DateScrollPicker (1.0.1)
-  - Differentiator (4.0.1)
-  - EasyDi (1.6.1)
+  - PinLayout (1.8.13)
+  - Realm (4.3.1):
+    - Realm/Headers (= 4.3.1)
+  - Realm/Headers (4.3.1)
+  - RealmSwift (4.3.1):
+    - Realm (= 4.3.1)
   - RxCocoa (5.0.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
-  - RxDataSources (4.0.1):
-    - Differentiator (~> 4.0)
-    - RxCocoa (~> 5.0)
-    - RxSwift (~> 5.0)
   - RxOptional (4.1.0):
     - RxCocoa (~> 5)
     - RxSwift (~> 5)
+  - RxRealm (2.0.0):
+    - RealmSwift (~> 4.0)
+    - RxSwift (~> 5.0)
   - RxRelay (5.0.1):
     - RxSwift (~> 5)
   - RxSwift (5.0.1)
@@ -27,10 +30,10 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 5.0.0-rc.3)
   - DateScrollPicker
-  - EasyDi
+  - PinLayout
   - RxCocoa (~> 5)
-  - RxDataSources (~> 4.0)
   - RxOptional
+  - RxRealm
   - RxSwift (~> 5)
   - RxTest (~> 5)
   - SwiftGen (~> 6.0)
@@ -41,11 +44,12 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - DateScrollPicker
-    - Differentiator
-    - EasyDi
+    - PinLayout
+    - Realm
+    - RealmSwift
     - RxCocoa
-    - RxDataSources
     - RxOptional
+    - RxRealm
     - RxRelay
     - RxSwift
     - RxTest
@@ -56,11 +60,12 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
   DateScrollPicker: e56c054b24ca9b69381971db0d5cf9e0654534ef
-  Differentiator: 886080237d9f87f322641dedbc5be257061b0602
-  EasyDi: 3d7d4c0d3ad2d78b3ff22d4755590d32945f69cc
+  PinLayout: e41a50260a76508b7a7fcee8955c76639adc69bc
+  Realm: 31dc40934081ef740f60feedc46d88473cbfeb40
+  RealmSwift: b5199e9a41f67b99f51acf6874a6166f5fbe93d1
   RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
-  RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
   RxOptional: b1fcd60856807a564c0215c2184b8d33e7826dc2
+  RxRealm: 900f5c7e6f0a2d6527b56eaf7283f3035ec1e8ba
   RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
   RxTest: 0132f952a61da82d5233abedaa559df91e5330e5
@@ -68,6 +73,6 @@ SPEC CHECKSUMS:
   SwiftLint: 4105f061f9812b214568b736dab580ab2c73a582
   XCoordinator: 67772bf463acec002a920ab5eb04f46835dcf123
 
-PODFILE CHECKSUM: 0894f3df5aba7cce9020591dcc93078708b1c7c7
+PODFILE CHECKSUM: 633d34a8a0893b04b84651dbf61708fe91df4047
 
 COCOAPODS: 1.8.4

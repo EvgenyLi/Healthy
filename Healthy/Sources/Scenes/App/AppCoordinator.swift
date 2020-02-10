@@ -10,6 +10,7 @@ import XCoordinator
 
 enum AppRoute: Route {
     case main
+    case login
 }
 
 final class AppCoordinator: ViewCoordinator<AppRoute> {
@@ -17,7 +18,7 @@ final class AppCoordinator: ViewCoordinator<AppRoute> {
     // MARK: - Public
     init() {
         super.init(rootViewController: .init(), initialRoute: nil)
-        trigger(.main)
+        trigger(.login)
     }
 
     // MARK: - Overrides
@@ -27,6 +28,10 @@ final class AppCoordinator: ViewCoordinator<AppRoute> {
         case .main:
             let main = MainCoordinator()
             return .embed(main, in: rootViewController)
+        case .login:
+            let lc = LoginCoordinator()
+            rootViewController.dismiss(animated: true, completion: nil)
+            return .embed(lc, in: rootViewController)
         }
     }
 }

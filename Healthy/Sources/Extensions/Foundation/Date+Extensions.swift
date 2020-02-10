@@ -23,4 +23,37 @@ public extension Date {
 
         self = date
     }
+    
+    func format(dateFormat: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = dateFormat
+        return dateFormatter.string(from: self)
+    }
+    
+    func UTCToLocal(date: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "H:mm:ss"
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        
+        let dt = dateFormatter.date(from: date)
+        dateFormatter.timeZone = TimeZone.current
+        dateFormatter.dateFormat = "h:mm a"
+        
+        return dateFormatter.string(from: dt!)
+    }
+    
+    static func today() -> Date {
+        let cal = NSCalendar.current
+        let components = cal.dateComponents([.year, .month, .day], from: Date())
+        let today = cal.date(from: components)
+        return today!
+    }
+    
+    func addDays(_ days: Int) -> Date? {
+        let dayComponenet = NSDateComponents()
+        dayComponenet.day = days
+        let theCalendar = NSCalendar.current
+        let nextDate = theCalendar.date(byAdding: dayComponenet as DateComponents, to: self)
+        return nextDate
+    }
 }
