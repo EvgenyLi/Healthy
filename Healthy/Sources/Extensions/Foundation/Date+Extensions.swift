@@ -30,7 +30,7 @@ public extension Date {
         return dateFormatter.string(from: self)
     }
     
-    func UTCToLocal(date:String) -> String {
+    func UTCToLocal(date: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "H:mm:ss"
         dateFormatter.timeZone = TimeZone(abbreviation: "UTC")

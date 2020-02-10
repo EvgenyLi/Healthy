@@ -37,6 +37,10 @@
 		C2B60B6123C530C000F486F5 /* assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B60B5F23C530C000F486F5 /* assets.swift */; };
 		C2B60B9523C546B600F486F5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C2B60B9323C546B600F486F5 /* Localizable.strings */; };
 		C2B60B9A23C5503300F486F5 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = C2B60B9923C5503300F486F5 /* .swiftlint.yml */; };
+		C2BF36FB23EF3F2100D95871 /* Transition+DismissAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BF36FA23EF3F2100D95871 /* Transition+DismissAll.swift */; };
+		C2C62D7423E9F4F900737DF6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C62D7323E9F4F900737DF6 /* LoginViewController.swift */; };
+		C2C62D7623E9F50E00737DF6 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C62D7523E9F50E00737DF6 /* LoginCoordinator.swift */; };
+		C2C62D7823E9F52500737DF6 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C62D7723E9F52500737DF6 /* LoginViewModel.swift */; };
 		C2F4710723BB3314005D0FCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2F4710623BB3314005D0FCB /* Assets.xcassets */; };
 		C2F4710A23BB3314005D0FCB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2F4710823BB3314005D0FCB /* LaunchScreen.storyboard */; };
 		C2F4711523BB3315005D0FCB /* HealthyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F4711423BB3315005D0FCB /* HealthyTests.swift */; };
@@ -114,6 +118,10 @@
 		C2B60B9423C546B600F486F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C2B60B9623C546EA00F486F5 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C2B60B9923C5503300F486F5 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		C2BF36FA23EF3F2100D95871 /* Transition+DismissAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transition+DismissAll.swift"; sourceTree = "<group>"; };
+		C2C62D7323E9F4F900737DF6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C2C62D7523E9F50E00737DF6 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		C2C62D7723E9F52500737DF6 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		C2F470FA23BB3314005D0FCB /* Healthy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Healthy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2F4710623BB3314005D0FCB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C2F4710B23BB3314005D0FCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -232,6 +240,7 @@
 		C2353DFD23BCF1F40018A613 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				C2C62D7223E9F49A00737DF6 /* Login */,
 				C2353EB123C0DE590018A613 /* App */,
 				C2353E6623BFA2260018A613 /* TabController */,
 				C2353E4923BF9C270018A613 /* Settings */,
@@ -313,6 +322,16 @@
 				C2B60B5E23C530C000F486F5 /* strings.swift */,
 			);
 			path = SwiftGen;
+			sourceTree = "<group>";
+		};
+		C2C62D7223E9F49A00737DF6 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				C2C62D7323E9F4F900737DF6 /* LoginViewController.swift */,
+				C2C62D7523E9F50E00737DF6 /* LoginCoordinator.swift */,
+				C2C62D7723E9F52500737DF6 /* LoginViewModel.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		C2F470F123BB3314005D0FCB = {
@@ -482,6 +501,7 @@
 			isa = PBXGroup;
 			children = (
 				C2F4749723BB4B62005D0FCB /* Router+Rx.swift */,
+				C2BF36FA23EF3F2100D95871 /* Transition+DismissAll.swift */,
 			);
 			path = XCoordinator;
 			sourceTree = "<group>";
@@ -784,6 +804,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2C62D7423E9F4F900737DF6 /* LoginViewController.swift in Sources */,
+				C2BF36FB23EF3F2100D95871 /* Transition+DismissAll.swift in Sources */,
 				C2F4749F23BB4C82005D0FCB /* JSON.swift in Sources */,
 				C2F4748C23BB4A77005D0FCB /* ObservableType+AdditionalOperators.swift in Sources */,
 				C21766EE23D38E71003DB4D6 /* DateScrollPickerDataSource.swift in Sources */,
@@ -815,9 +837,11 @@
 				C2F4749823BB4B62005D0FCB /* Router+Rx.swift in Sources */,
 				C2B60B6123C530C000F486F5 /* assets.swift in Sources */,
 				C2F4748323BB4A1A005D0FCB /* Dictionary+Extensions.swift in Sources */,
+				C2C62D7623E9F50E00737DF6 /* LoginCoordinator.swift in Sources */,
 				C2B60B6023C530C000F486F5 /* strings.swift in Sources */,
 				C2353E5723BF9DFF0018A613 /* VisitsCoordinator.swift in Sources */,
 				C2353E4F23BF9C840018A613 /* MeasurementsViewController.swift in Sources */,
+				C2C62D7823E9F52500737DF6 /* LoginViewModel.swift in Sources */,
 				C2F4749523BB4AF2005D0FCB /* Optional+Unwrap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

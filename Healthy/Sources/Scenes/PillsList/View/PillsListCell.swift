@@ -10,7 +10,6 @@ import UIKit
 
 class PillsListCell: UITableViewCell {
 
-    
     // MARK: Private
     
     private let _header = UILabel()
